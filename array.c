@@ -22,6 +22,7 @@ void insert_element(List* list, int element) {
         list->arr = realloc(list->arr, list->size * 2 * sizeof(int));
         list->size  *= 2;
         list->arr[list->used++] = element;
+        return;
     }
    list->arr[list->used++] = element; 
 }
@@ -29,7 +30,7 @@ void insert_element(List* list, int element) {
 void print_list(List* list) {
     printf("List contents: ");
     for (int i = 0; i < list->size; i++) {
-        printf("%d, ", i);
+        printf("%d, ", list->arr[i]);
     }
 }
 
